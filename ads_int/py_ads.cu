@@ -4,11 +4,14 @@
 #include <bitset>
 #include <cmath>
 #include <cassert>
+#include <pybind11/pybind11.h>
 #include "../cub-1.8.0/cub/cub.cuh"
 #include "common.h"
 #include "csr_graph.h"
 #include "support.h"
 #include "wl.h"
+
+namespace py = pybind11;
 
 #define TB_SIZE 768
 int CUDA_DEVICE = 0;
@@ -296,19 +299,20 @@ void gg_main(CSRGraph& hg, CSRGraph& gg) {
 //clean up
 }
 
-int main(int argc, char *argv[]) {
-	if (argc == 1) {
-		usage(argc, argv);
-		exit(1);
-	}
-	parse_args(argc, argv);
+int sssp_from_file(char *input_file, char *output_file) {
 	cudaSetDevice(CUDA_DEVICE);
 	CSRGraphTy g, gg;
-	g.read(INPUT);
+	g.read(input_file);
 	g.copy_to_gpu(gg);
 	gg_main(g, gg);
 	gg.copy_to_cpu(g);
-	output(g, OUTPUT);
-
+	output(g, output_file);
 	return 0;
+}
+
+
+
+PYBIND11_MODULE(adds, m) {
+	m.doc() = "ADDS Single Source shortest Promble python plugin"; // optional module docstring
+	m.def("sssp_from_file", &sssp_from_file, "A function which compute sssp from Galois .gr format file", py::arg("input_file"), py::arg("output_file"));
 }
