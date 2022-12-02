@@ -1,10 +1,13 @@
 /*  -*- mode: c++ -*-  */
+#include <cstdint>
 #include <cuda.h>
 #include <inttypes.h>
 #include <bitset>
 #include <cmath>
 #include <cassert>
 #include <pybind11/pybind11.h>
+#include <pybind11/numpy.h>
+#include <stdexcept>
 #include "../cub-1.8.0/cub/cub.cuh"
 #include "common.h"
 #include "csr_graph.h"
@@ -299,6 +302,112 @@ void gg_main(CSRGraph& hg, CSRGraph& gg) {
 //clean up
 }
 
+
+void gg_main_numpy(CSRGraph& gg) {
+
+	struct cudaDeviceProp dev_prop;
+	cudaGetDeviceProperties(&dev_prop, CUDA_DEVICE);
+
+	int num_threads = TB_SIZE;
+	int num_tb_per_sm;
+	int max_num_threads;
+	int min_grid_size;
+	// cudaOccupancyMaxPotentialBlockSize(&min_grid_size, &max_num_threads, sssp_kernel);
+	// if (num_threads > max_num_threads) {
+	// 	printf("error max threads is %d, specified is %d\n", max_num_threads, num_threads);
+	// 	fflush(0);
+	// 	exit(1);
+	// }
+	// printf("max_num_threads is %d\n", max_num_threads);
+	cudaOccupancyMaxActiveBlocksPerMultiprocessor(&num_tb_per_sm, sssp_kernel, num_threads, 0);
+	int num_sm = dev_prop.multiProcessorCount;
+	int num_tb = num_tb_per_sm * (num_sm - 1);
+	int num_warps = num_threads / 32;
+	printf("sm count %u, tb per sm %u, tb size %u, num warp %u, total tb %u\n", num_sm, num_tb_per_sm, num_threads, num_warps, num_tb);
+
+#define WL_SIZE_MUL 1.5f
+	unsigned suggest_size = (unsigned)((float)gg.nedges * WL_SIZE_MUL) + (NUM_BAG * BLOCK_SIZE * 8);
+	suggest_size = min(suggest_size, 536870912);
+	unsigned* work_count;
+	cudaMalloc((void **) &work_count, num_tb * num_threads * sizeof(unsigned));
+
+#define RUN_LOOP 1
+
+	FILE * d3;
+	d3 = fopen("/dev/fd/3", "a");
+
+	worklist wl;
+	wl.alloc(num_tb, num_warps, suggest_size, gg.nnodes, gg.nedges);
+
+	unsigned long long agg_total_work = 0;
+	float agg_time = 0;
+	for (int loop = 0; loop < RUN_LOOP; loop++) {
+		int other_num_tb = num_tb_per_sm * num_sm;
+
+		kernel<<<other_num_tb, 1024>>>(gg, start_node);
+		cudaMemset(work_count, 0, num_tb * num_threads * sizeof(unsigned));
+		wl.reinit();
+		cudaDeviceSynchronize();
+
+		float elapsed_time;   // timing variables
+		cudaEvent_t start_event, stop_event;
+		cudaEventCreate(&start_event);
+		cudaEventCreate(&stop_event);
+		cudaEventRecord(start_event, 0);
+
+		float ave_degree = (float) gg.nedges / (float) gg.nnodes;
+		float ave_wt;
+		{
+			//find delta
+			int a;
+			cudaOccupancyMaxActiveBlocksPerMultiprocessor(&a, profiler_kernel, 1024, 0);
+			int total_warp = other_num_tb * 1024 / 32;
+			int warp_edge_interval = gg.nedges / (total_warp * I_TIME * N_TIME);
+			float* host_bk_wt = (float*) malloc(other_num_tb * sizeof(float));
+			float* bk_wt;
+			cudaMalloc((void **) &bk_wt, other_num_tb * sizeof(float));
+			profiler_kernel<<<other_num_tb, 1024>>>(gg, bk_wt, warp_edge_interval);
+			cudaMemcpy(host_bk_wt, bk_wt, other_num_tb * sizeof(float), cudaMemcpyDeviceToHost);
+
+			ave_wt = 0;
+			for (int i = 0; i < other_num_tb; i++) {
+				ave_wt += host_bk_wt[i];
+			}
+			ave_wt /= other_num_tb;
+		}
+		wl.set_param(ave_wt, ave_degree);
+		gg_main_pipe_1_wrapper(gg, gg, start_node, num_tb, num_threads, wl, work_count);
+
+		cudaEventRecord(stop_event, 0);
+		cudaEventSynchronize(stop_event);
+		cudaEventElapsedTime(&elapsed_time, start_event, stop_event);
+
+		unsigned* work_count_host = (unsigned*) malloc(num_tb * num_threads * sizeof(unsigned));
+
+		cudaMemcpy(work_count_host, work_count, num_tb * num_threads * sizeof(unsigned), cudaMemcpyDeviceToHost);
+		unsigned long long total_work = 0;
+		for (int i = 0; i < num_tb * num_threads; i++) {
+			total_work += work_count_host[i];
+		}
+
+		agg_time += elapsed_time;
+		agg_total_work += total_work;
+
+		printf("Measured time for sample = %.3fs\n", elapsed_time / 1000.0f);
+		printf("total work is %llu\n", total_work);
+
+	}
+
+	float ave_time = agg_time / RUN_LOOP;
+	long long unsigned ave_work = agg_total_work / RUN_LOOP;
+	fprintf(d3, "%.3f %llu\n", ave_time, ave_work);
+	wl.free();
+	cudaFree(work_count);
+	fclose(d3);
+
+//clean up
+}
+
 int sssp_from_file(char *input_file, char *output_file) {
 	cudaSetDevice(CUDA_DEVICE);
 	CSRGraphTy g, gg;
@@ -311,8 +420,44 @@ int sssp_from_file(char *input_file, char *output_file) {
 }
 
 
+py::array_t<unsigned> sssp_from_csr(uint64_t num_nodes, uint64_t num_edges, py::array_t<uint32_t, py::array::c_style | py::array::forcecast> row_ptr, py::array_t<uint32_t,\
+									 py::array::c_style | py::array::forcecast> column, py::array_t<int, py::array::c_style | py::array::forcecast> edge_data) {
+	py::buffer_info row_ptr_buffer = row_ptr.request();
+	py::buffer_info column_buffer = column.request();
+	py::buffer_info edge_data_buffer = edge_data.request();
+
+	if (row_ptr_buffer.ndim != 1 || column_buffer.ndim != 1 || edge_data_buffer.ndim != 1) {
+		throw std::runtime_error("The input of CSR row must be an array.");
+	}
+
+	if (row_ptr_buffer.size != num_nodes + 1) {
+		throw std::runtime_error("The size of CSR row pointer array doesn't match the number of nodes.");
+	}
+	else if (column_buffer.size != num_edges) {
+		throw std::runtime_error("The size of CSR column array doesn't match the number of edges.");
+	}
+	else if (edge_data_buffer.size != num_edges) {
+		throw std::runtime_error("The size of CSR edge data array doesn't match the number of edges.");
+	}
+
+	
+	auto result = py::array_t<int, py::array::c_style | py::array::forcecast>(num_nodes);
+	auto result_buffer = result.request();
+	
+	for (int i = num_nodes - 9; i < num_nodes+1; ++i) {
+		printf("%d ", ((uint32_t*)row_ptr_buffer.ptr)[i]);
+	}
+	
+	CSRGraphTy gg;
+	gg.init_from_array_to_gpu(num_nodes, num_edges, static_cast<uint64_t*>(row_ptr_buffer.ptr), static_cast<uint64_t*>(column_buffer.ptr), static_cast<int*>(edge_data_buffer.ptr));
+	gg_main_numpy(gg);
+	gg.copy_result_to_numpy(static_cast<int*>(result_buffer.ptr));
+
+	return result;
+}
 
 PYBIND11_MODULE(adds, m) {
 	m.doc() = "ADDS Single Source shortest Promble python plugin"; // optional module docstring
 	m.def("sssp_from_file", &sssp_from_file, "A function which compute sssp from Galois .gr format file", py::arg("input_file"), py::arg("output_file"));
+	m.def("sssp_from_csr", &sssp_from_csr, "A function which compute sssp from CSR matrix", py::arg("num_nodes"), py::arg("num_edges"), py::arg("row_ptr"), py::arg("column"), py::arg("edge_data"));
 }

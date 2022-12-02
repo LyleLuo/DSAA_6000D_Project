@@ -14,6 +14,7 @@
 #ifndef LSG_CSR_GRAPH
 #define LSG_CSR_GRAPH
 
+#include <cstdint>
 #include <fstream>
 #include <stdint.h>
 #include <float.h>
@@ -27,6 +28,9 @@ struct CSRGraph {
 	unsigned read(char file[]);
 	void copy_to_gpu(struct CSRGraph &copygraph);
 	void copy_to_cpu(struct CSRGraph &copygraph);
+
+	void init_from_array_to_gpu(uint64_t num_nodes, uint64_t num_edges, index_type *row_ptr, index_type *column, edge_data_type *edgeData);
+	void copy_result_to_numpy(edge_data_type *result);
 
 	CSRGraph();
 

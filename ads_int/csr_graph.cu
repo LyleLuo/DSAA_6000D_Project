@@ -349,6 +349,33 @@ void CSRGraph::copy_to_cpu(struct CSRGraph &copygraph) {
 					(nnodes + 1) * sizeof(index_type), cudaMemcpyDeviceToHost));
 }
 
+void CSRGraph::init_from_array_to_gpu(uint64_t num_nodes, uint64_t num_edges, index_type *row_ptr, index_type *column, edge_data_type *edgeData) {
+	nnodes = num_nodes;
+	nedges = num_edges;
+
+	assert(allocOnDevice());
+	check_cuda(
+			cudaMemcpy(edge_dst, column,
+					nedges * sizeof(index_type), cudaMemcpyHostToDevice));
+	check_cuda(
+			cudaMemcpy(edge_data, edgeData,
+					nedges * sizeof(edge_data_type), cudaMemcpyHostToDevice));
+	check_cuda(
+			cudaMemcpy(row_start, row_ptr,
+					(nnodes + 1) * sizeof(index_type), cudaMemcpyHostToDevice));
+}
+
+
+void CSRGraph::copy_result_to_numpy(edge_data_type *result) {
+	assert(device_graph);
+	check_cuda(
+			cudaMemcpy(result, node_data,
+					nnodes * sizeof(edge_data_type), cudaMemcpyDeviceToHost));
+
+	
+}
+
+
 struct EdgeIterator {
 	CSRGraph *g;
 	index_type node;
