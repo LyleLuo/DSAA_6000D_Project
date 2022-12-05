@@ -3,9 +3,9 @@
 
 
 ## Dependencies and prerequisites
-1. CUDA >= 10.0
-2. GCC = 7.5.0
-3. Boost = 1.77.0
+1. CUDA >= 10.0 & <= 11.4
+2. GCC >= 7.5.0
+3. Boost with iostreams and serialization
 4. Python >= 3.7
 
 ## Build

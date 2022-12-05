@@ -1,3 +1,5 @@
 *.gr
 *.qdrep
 *.ncu-rep
+3090.log
+*.nsys-rep

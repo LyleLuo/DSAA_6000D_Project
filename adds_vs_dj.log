@@ -1,0 +1,527 @@
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 8281.955078, round 8192
+multi-bag, multi-warp, variant c, wl size is 67108864, linear size is 67108864
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 2099436.750000, ave_degree 7.921729, delta init 13 (8281.955078)
+Measured time for sample = 0.016s
+total work is 6117313
+pds-100.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.014672, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 8, ave_wt 1.000000, ave_degree 2.129909, delta init 2 (0.014672)
+Measured time for sample = 0.000s
+total work is 577240
+adds time:  0.006897449493408203
+NetworkX Dijkstra time:  11.721046447753906
+ 
+oh2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 242.712173, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 37590.730469, ave_degree 4.839931, delta init 8 (242.712173)
+Measured time for sample = 0.005s
+total work is 4434093
+adds time:  0.013063907623291016
+NetworkX Dijkstra time:  15.841920614242554
+ 
+GL7d21.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.002528, round 4
+multi-bag, multi-warp, variant c, wl size is 67108864, linear size is 67108864
+MAX_CON_BAG 4, MINI_GRAIN 2, ave_wt 1.022867, ave_degree 12.642909, delta init 2 (0.002528)
+Measured time for sample = 0.002s
+total work is 1498998
+adds time:  0.09300971031188965
+NetworkX Dijkstra time:  146.054057598114
+ 
+kron_g500-logn18.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.000462, round 4
+multi-bag, multi-warp, variant c, wl size is 67108864, linear size is 67108864
+MAX_CON_BAG 4, MINI_GRAIN 1, ave_wt 1.192551, ave_degree 80.743576, delta init 2 (0.000462)
+Measured time for sample = 0.009s
+total work is 264448
+adds time:  0.10122323036193848
+NetworkX Dijkstra time:  139.07763290405273
+ 
+ga2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 327.670135, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 51080.941406, ave_degree 4.871605, delta init 8 (327.670135)
+Measured time for sample = 0.004s
+total work is 2782947
+adds time:  0.03920125961303711
+NetworkX Dijkstra time:  16.55334997177124
+ 
+az2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 320.139648, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 50703.644531, ave_degree 4.949368, delta init 8 (320.139648)
+Measured time for sample = 0.006s
+total work is 2513450
+adds time:  0.03746366500854492
+NetworkX Dijkstra time:  10.16000247001648
+ 
+wiki-talk-temporal.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.025681, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 8, ave_wt 2.385467, ave_degree 2.902771, delta init 2 (0.025681)
+Measured time for sample = 0.000s
+total work is 2
+adds time:  0.013403654098510742
+NetworkX Dijkstra time:  25.72692561149597
+ 
+ny2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 263.410248, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 41151.460938, ave_degree 4.882054, delta init 8 (263.410248)
+Measured time for sample = 0.005s
+total work is 3704548
+adds time:  0.04088234901428223
+NetworkX Dijkstra time:  14.176143169403076
+ 
+USA-road-d.USA.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 38.846382, round 32
+multi-bag, multi-warp, variant c, wl size is 134217728, linear size is 134217728
+MAX_CON_BAG 4, MINI_GRAIN 8, ave_wt 2995.600098, ave_degree 2.409813, delta init 5 (38.846382)
+Measured time for sample = 0.113s
+total work is 314308588
+adds time:  0.30465269088745117
+NetworkX Dijkstra time:  659.2280797958374
+ 
+nc2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 295.454742, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 46346.402344, ave_degree 4.902020, delta init 8 (295.454742)
+Measured time for sample = 0.012s
+total work is 2648183
+adds time:  0.043817996978759766
+NetworkX Dijkstra time:  30.964991092681885
+ 
+kron_g500-logn17.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 198.152435, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 1, ave_wt 494836.843750, ave_degree 78.039169, delta init 8 (198.152435)
+Measured time for sample = 0.002s
+total work is 161488
+adds time:  0.05262470245361328
+NetworkX Dijkstra time:  60.30430722236633
+ 
+USA-road-d.NY.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 14.309727, round 16
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 8, ave_wt 1264.709839, ave_degree 2.761910, delta init 4 (14.309727)
+Measured time for sample = 0.008s
+total work is 1039262
+adds time:  0.04198431968688965
+NetworkX Dijkstra time:  6.413001775741577
+ 
+engine.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.007401, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 1, ave_wt 8.000000, ave_degree 33.778717, delta init 2 (0.007401)
+Measured time for sample = 0.001s
+total work is 306390
+adds time:  0.014347076416015625
+NetworkX Dijkstra time:  26.00065851211548
+ 
+tn2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 286.583069, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 45600.687500, ave_degree 4.972455, delta init 8 (286.583069)
+Measured time for sample = 0.007s
+total work is 2546156
+adds time:  0.048407554626464844
+NetworkX Dijkstra time:  8.454630374908447
+ 
+GL7d23.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.004414, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 1.089430, ave_degree 7.713504, delta init 2 (0.004414)
+Measured time for sample = 0.000s
+total work is 574257
+adds time:  0.012476205825805664
+NetworkX Dijkstra time:  19.302603483200073
+ 
+mi2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 315.044434, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 48227.085938, ave_degree 4.783758, delta init 8 (315.044434)
+Measured time for sample = 0.006s
+total work is 2826809
+adds time:  0.04675436019897461
+NetworkX Dijkstra time:  11.149177551269531
+ 
+n4c6-b9.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.003332, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 2, ave_wt 1.000000, ave_degree 9.379723, delta init 2 (0.003332)
+Measured time for sample = 0.000s
+total work is 225715
+adds time:  0.008809328079223633
+NetworkX Dijkstra time:  12.167720079421997
+ 
+n4c6-b8.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.003472, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 2, ave_wt 1.000000, ave_degree 9.000000, delta init 2 (0.003472)
+Measured time for sample = 0.000s
+total work is 186628
+adds time:  0.007950305938720703
+NetworkX Dijkstra time:  11.116854667663574
+ 
+in2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 258.558777, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 39707.660156, ave_degree 4.799158, delta init 8 (258.558777)
+Measured time for sample = 0.005s
+total work is 2770629
+adds time:  0.013011455535888672
+NetworkX Dijkstra time:  8.854315042495728
+ 
+GL7d19.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.001658, round 4
+multi-bag, multi-warp, variant c, wl size is 134217728, linear size is 134217728
+MAX_CON_BAG 4, MINI_GRAIN 1, ave_wt 1.012764, ave_degree 19.087891, delta init 2 (0.001658)
+Measured time for sample = 0.003s
+total work is 2008893
+adds time:  0.14945435523986816
+NetworkX Dijkstra time:  269.574387550354
+ 
+r4-2e23.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 39.053711, round 32
+multi-bag, multi-warp, variant c, wl size is 67108864, linear size is 67108864
+MAX_CON_BAG 4, MINI_GRAIN 8, ave_wt 4998.875000, ave_degree 4.000000, delta init 5 (39.053711)
+Measured time for sample = 0.014s
+total work is 11655196
+adds time:  0.1510319709777832
+NetworkX Dijkstra time:  532.6413013935089
+ 
+kron_g500-logn19.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.000435, round 4
+multi-bag, multi-warp, variant c, wl size is 134217728, linear size is 134217728
+MAX_CON_BAG 4, MINI_GRAIN 1, ave_wt 1.155406, ave_degree 83.089745, delta init 2 (0.000435)
+Measured time for sample = 0.000s
+total work is 1
+adds time:  0.13928556442260742
+NetworkX Dijkstra time:  253.60578870773315
+ 
+wi2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 365.934662, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 55955.097656, ave_degree 4.778440, delta init 8 (365.934662)
+Measured time for sample = 0.004s
+total work is 2063186
+adds time:  0.04272174835205078
+NetworkX Dijkstra time:  16.34929060935974
+ 
+kron_g500-logn20.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.000415, round 4
+multi-bag, multi-warp, variant c, wl size is 268435456, linear size is 268435456
+MAX_CON_BAG 4, MINI_GRAIN 1, ave_wt 1.129728, ave_degree 85.106415, delta init 2 (0.000415)
+Measured time for sample = 0.017s
+total work is 967382
+adds time:  0.28377604484558105
+NetworkX Dijkstra time:  581.7208871841431
+ 
+GL7d22.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.003268, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 2, ave_wt 1.048452, ave_degree 10.026466, delta init 2 (0.003268)
+Measured time for sample = 0.001s
+total work is 877304
+adds time:  0.05885720252990723
+NetworkX Dijkstra time:  100.40194392204285
+ 
+n4c6-b10.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.004003, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 1.000000, ave_degree 7.806806, delta init 2 (0.004003)
+Measured time for sample = 0.000s
+total work is 218480
+adds time:  0.038069725036621094
+NetworkX Dijkstra time:  11.290689706802368
+ 
+Hardesty1.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.013473, round 4
+multi-bag, multi-warp, variant c, wl size is 67108864, linear size is 67108864
+MAX_CON_BAG 4, MINI_GRAIN 2, ave_wt 6.005652, ave_degree 13.929326, delta init 2 (0.013473)
+Measured time for sample = 0.006s
+total work is 5667468
+adds time:  0.048102617263793945
+NetworkX Dijkstra time:  83.67141819000244
+ 
+GAP-road.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 38.983826, round 32
+multi-bag, multi-warp, variant c, wl size is 134217728, linear size is 134217728
+MAX_CON_BAG 4, MINI_GRAIN 8, ave_wt 3006.198975, ave_degree 2.409813, delta init 5 (38.983826)
+Measured time for sample = 0.111s
+total work is 297485192
+adds time:  0.3224310874938965
+NetworkX Dijkstra time:  649.8835890293121
+ 
+pa2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 227.307739, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 35519.195312, ave_degree 4.883137, delta init 8 (227.307739)
+Measured time for sample = 0.005s
+total work is 4525676
+adds time:  0.04584193229675293
+NetworkX Dijkstra time:  39.63708686828613
+ 
+USA-road-d.CAL.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 35.846973, round 32
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 8, ave_wt 2825.718262, ave_degree 2.463351, delta init 5 (35.846973)
+Measured time for sample = 0.028s
+total work is 50796424
+adds time:  0.07212209701538086
+NetworkX Dijkstra time:  36.41547179222107
+ 
+va2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 260.043152, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 40829.925781, ave_degree 4.906629, delta init 8 (260.043152)
+Measured time for sample = 0.008s
+total work is 3555762
+adds time:  0.07768630981445312
+NetworkX Dijkstra time:  11.554859399795532
+ 
+al2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 291.471619, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 45494.910156, ave_degree 4.877717, delta init 8 (291.471619)
+Measured time for sample = 0.004s
+total work is 3004027
+adds time:  0.011126279830932617
+NetworkX Dijkstra time:  8.807510375976562
+ 
+fl2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 209.020523, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 32392.509766, ave_degree 4.842902, delta init 8 (209.020523)
+Measured time for sample = 0.005s
+total work is 4243795
+adds time:  0.014706611633300781
+NetworkX Dijkstra time:  17.936253547668457
+ 
+GL7d20.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.002029, round 4
+multi-bag, multi-warp, variant c, wl size is 67108864, linear size is 67108864
+MAX_CON_BAG 4, MINI_GRAIN 2, ave_wt 1.015646, ave_degree 15.641576, delta init 2 (0.002029)
+Measured time for sample = 0.003s
+total work is 1962146
+adds time:  0.11873769760131836
+NetworkX Dijkstra time:  235.7022840976715
+ 
+mo2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 314.999878, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 48602.738281, ave_degree 4.821702, delta init 8 (314.999878)
+Measured time for sample = 0.005s
+total work is 4273771
+adds time:  0.046527862548828125
+NetworkX Dijkstra time:  27.39885640144348
+ 
+rmat22.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 8279.585938, round 8192
+multi-bag, multi-warp, variant c, wl size is 67108864, linear size is 67108864
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 2098836.250000, ave_degree 7.921729, delta init 13 (8279.585938)
+Measured time for sample = 0.015s
+total work is 6129318
+adds time:  0.1254105567932129
+NetworkX Dijkstra time:  322.6266326904297
+ 
+USA-road-d.FLA.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 24.862532, round 32
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 8, ave_wt 2016.398682, ave_degree 2.534435, delta init 5 (24.862532)
+Measured time for sample = 0.042s
+total work is 4585874
+adds time:  0.0745089054107666
+NetworkX Dijkstra time:  44.48001575469971
+ 
+atmosmodm.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 4117.290527, round 4096
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 912677.062500, ave_degree 6.927166, delta init 12 (4117.290527)
+Measured time for sample = 0.003s
+total work is 2700946
+adds time:  0.06578850746154785
+NetworkX Dijkstra time:  69.92792272567749
+ 
+il2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 251.026871, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 38504.445312, ave_degree 4.793367, delta init 8 (251.026871)
+Measured time for sample = 0.005s
+total work is 3866817
+adds time:  0.04088139533996582
+NetworkX Dijkstra time:  19.20578932762146
+ 
+ca2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 262.195679, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 41226.359375, ave_degree 4.913597, delta init 8 (262.195679)
+Measured time for sample = 0.009s
+total work is 8218633
+adds time:  0.04789566993713379
+NetworkX Dijkstra time:  29.325666904449463
+ 
+neos3.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.007890, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 8, ave_wt 1.000000, ave_degree 3.960866, delta init 2 (0.007890)
+Measured time for sample = 0.000s
+total work is 6481
+adds time:  0.04783320426940918
+NetworkX Dijkstra time:  13.78620958328247
+ 
+rmat20.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 2078.656494, round 2048
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 523977.375000, ave_degree 7.877344, delta init 11 (2078.656494)
+Measured time for sample = 0.004s
+total work is 1627858
+adds time:  0.03081035614013672
+NetworkX Dijkstra time:  71.67877435684204
+ 
+mn2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 443.318787, round 512
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 67011.000000, ave_degree 4.723675, delta init 9 (443.318787)
+Measured time for sample = 0.009s
+total work is 4008467
+adds time:  0.05426311492919922
+NetworkX Dijkstra time:  13.429535150527954
+ 
+ia2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 373.934662, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 56568.664062, ave_degree 4.727486, delta init 8 (373.934662)
+Measured time for sample = 0.004s
+total work is 1682800
+adds time:  0.009824514389038086
+NetworkX Dijkstra time:  8.66217303276062
+ 
+sx-stackoverflow.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.004006, round 4
+multi-bag, multi-warp, variant c, wl size is 134217728, linear size is 134217728
+MAX_CON_BAG 4, MINI_GRAIN 2, ave_wt 1.785015, ave_degree 13.925353, delta init 2 (0.004006)
+Measured time for sample = 0.011s
+total work is 2669055
+adds time:  0.09624195098876953
+NetworkX Dijkstra time:  294.86593747138977
+ 
+ks2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 404.482025, round 512
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 60854.605469, ave_degree 4.701584, delta init 9 (404.482025)
+Measured time for sample = 0.005s
+total work is 3347138
+adds time:  0.04483675956726074
+NetworkX Dijkstra time:  14.63344407081604
+ 
+tx2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 339.133026, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 52897.578125, ave_degree 4.874339, delta init 8 (339.133026)
+Measured time for sample = 0.008s
+total work is 7203806
+adds time:  0.028465747833251953
+NetworkX Dijkstra time:  36.94533181190491
+ 
+ok2010.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 326.215454, round 256
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 49423.289062, ave_degree 4.734533, delta init 8 (326.215454)
+Measured time for sample = 0.006s
+total work is 3039123
+adds time:  0.04213976860046387
+NetworkX Dijkstra time:  9.525355815887451
+ 
+pds-90.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.014651, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 8, ave_wt 1.000000, ave_degree 2.133011, delta init 2 (0.014651)
+Measured time for sample = 0.000s
+total work is 516131
+adds time:  0.007287740707397461
+NetworkX Dijkstra time:  11.568927764892578
+ 
+mc2depi.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 11.429108, round 8
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 8, ave_wt 1460.786987, ave_degree 3.994152, delta init 3 (11.429108)
+Measured time for sample = 0.015s
+total work is 5572119
+adds time:  0.023348093032836914
+NetworkX Dijkstra time:  15.963631868362427
+ 
+TF19.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.002881, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 2, ave_wt 1.267285, ave_degree 13.746351, delta init 2 (0.002881)
+Measured time for sample = 0.001s
+total work is 517562
+adds time:  0.04643535614013672
+NetworkX Dijkstra time:  28.72186279296875
+ 
+t2em.gr
+sm count 82, tb per sm 1, tb size 768, num warp 24, total tb 81
+float 0.010035, round 4
+multi-bag, multi-warp, variant c, wl size is 33554432, linear size is 33554432
+MAX_CON_BAG 4, MINI_GRAIN 4, ave_wt 1.599527, ave_degree 4.981199, delta init 2 (0.010035)
+Measured time for sample = 0.000s
+total work is 1
+adds time:  0.04456472396850586
+NetworkX Dijkstra time:  29.080543279647827
+ 
+adds vs dj:  1138.020153828071

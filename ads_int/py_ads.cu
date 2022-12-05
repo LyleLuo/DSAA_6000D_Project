@@ -444,12 +444,8 @@ py::array_t<unsigned> sssp_from_csr(uint64_t num_nodes, uint64_t num_edges, py::
 	auto result = py::array_t<int, py::array::c_style | py::array::forcecast>(num_nodes);
 	auto result_buffer = result.request();
 	
-	for (int i = num_nodes - 9; i < num_nodes+1; ++i) {
-		printf("%d ", ((uint32_t*)row_ptr_buffer.ptr)[i]);
-	}
-	
 	CSRGraphTy gg;
-	gg.init_from_array_to_gpu(num_nodes, num_edges, static_cast<uint64_t*>(row_ptr_buffer.ptr), static_cast<uint64_t*>(column_buffer.ptr), static_cast<int*>(edge_data_buffer.ptr));
+	gg.init_from_array_to_gpu(num_nodes, num_edges, static_cast<index_type*>(row_ptr_buffer.ptr), static_cast<index_type*>(column_buffer.ptr), static_cast<edge_data_type*>(edge_data_buffer.ptr));
 	gg_main_numpy(gg);
 	gg.copy_result_to_numpy(static_cast<int*>(result_buffer.ptr));
 

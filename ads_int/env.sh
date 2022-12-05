@@ -1,4 +1,4 @@
-source /home/t716/luowle/software/spack/share/spack/setup-env.sh
-spack load cuda@10.1.243
-spack load gcc@8.4.0
-# export PATH=/opt/nvidia/nsight-systems-cli/2020.3.1/target-linux-x64:$PATH
+source /home/luoweile/software/spack/share/spack/setup-env.sh
+spack load cuda@11.4
+export CPATH=`spack location -i boost`/include:$CPATH
+export PYTHONPATH=/home/luoweile/project/DSAA_6000D_Project/ads_int:$PYTHONPATH
