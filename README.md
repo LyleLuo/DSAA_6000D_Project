@@ -24,4 +24,21 @@ make check -j 4
 
 cd $PROJ_HOME/ads_int
 make adds
+export PYTHONPATH=`pwd`:$PYTHONPATH
 ```
+
+## Run
+`read_gr.py is an example`
+```
+import adds
+
+# interface 1
+adds.sssp_from_file(input_file_name, output_file_name)
+
+# interface 2
+result = adds.sssp_from_csr(num_nodes, num_edges, indptr_array, indices_array, graph_csr_array)
+```
+
+## Dataset
+
+https://zenodo.org/record/4365954/files/sssp-int.zip?download=1
